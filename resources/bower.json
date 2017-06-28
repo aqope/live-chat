@@ -1,0 +1,16 @@
+{
+  "name": "livechat",
+  "authors": [
+    "Artur Paklin <parkourtrane@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "materialize": "^0.99.0",
+    "socket.io": "^2.0.3",
+    "vue": "^2.3.4",
+    "socket.io-client": "^2.0.3"
+  }
+}

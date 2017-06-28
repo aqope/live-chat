@@ -7,13 +7,13 @@ server.listen(3000, function() {
   log('listening on 3000 port');
 });
 
+app.use('/static', express.static('resources'));
+
 app.get('/', function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
 io.on('connection', function(socket) {
-  log('User has connected');
-
   socket.on('chat message', function(msg) {
     io.emit('chat message', msg);
   })
@@ -22,6 +22,7 @@ io.on('connection', function(socket) {
     log('Used has disconnected');
   })
 });
+
 /*
   Logs message to the console with timestamp
 */

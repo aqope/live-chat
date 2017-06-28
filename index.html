@@ -13,28 +13,47 @@
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
     </style>
+
+    <link rel="stylesheet" href="static/bower_components/materialize/dist/css/materialize.min.css">
   </head>
   <body>
-    <ul id="messages">
+    <div id="chat-app">
+      <ul id="messages" v-for="msg in messages">
+        <li> {{ msg }} </li>
+      </ul>
 
-    </ul>
-    <form action="">
-      <input id="m" autocomplete="off"/>
-      <button>Send</button>
-    </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <form action="" v-on:submit="sendMessage">
+        <input id="m" v-model="message" autocomplete="off">
+        <button>Send</button>
+      </form>
+    </div>
+
+    <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="static/bower_components/vue/dist/vue.min.js"></script>
+    <script src="static/bower_components/socket.io-client/dist/socket.io.js"></script>
     <script type="text/javascript">
-      $(function () {
-        var socket = io();
-        $('form').submit(function() {
-          socket.emit('chat message', $('#m').val());
-          $('#m').val();
-          return false;
-        });
-        socket.on('chat message', function(msg) {
-          $('#messages').append($('<li>').text(msg));
-        });
+      var socket = io();
+
+      new Vue({
+        el: "#chat-app",
+        data: {
+          messages: [],
+          message: ""
+        },
+        mounted: function () {
+          socket.on('chat message', function(data) {
+            this.messages.push(data);
+          }.bind(this));
+        },
+        methods: {
+          sendMessage: function(e) {
+            e.preventDefault();
+            socket.emit("chat message", this.message);
+          },
+          receivedMessage: function(data) {
+            this.messages.push(data);
+          }
+        }
       });
     </script>
   </body>
