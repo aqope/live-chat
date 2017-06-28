@@ -14,8 +14,8 @@ app.get('/', function (request, response) {
 });
 
 io.on('connection', function(socket) {
-  socket.on('chat message', function(msg) {
-    io.emit('chat message', msg);
+  socket.on('client:message', function(data) {
+    io.emit('server:message', data);
   })
 
   socket.on('disconnect', function() {

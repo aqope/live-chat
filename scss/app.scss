@@ -2,6 +2,8 @@
 @import 'component/bubble';
 
 .app-container {
+  max-width: 500px;
+
   .container {
     position: fixed;
     bottom: 0;

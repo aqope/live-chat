@@ -16,8 +16,11 @@
       <ul id="messages" class="bubble-chat" v-for="msg in messages">
         <li>
             <div class="message-wrapper">
-              <div class="message received">
-                <p>{{ msg }}</p>
+              <div class="message sent" v-if="msg.username == username">
+                <p>{{ msg.message }}</p>
+              </div>
+              <div class="message received" v-else>
+                <p>{{ msg.message }}</p>
               </div>
             </div>
          </li>

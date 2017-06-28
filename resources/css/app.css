@@ -10,8 +10,8 @@
       display: inline-block;
       border-radius: 20px;
       width: auto;
-      max-width: 400px;
-      min-width: 100px; }
+      min-width: 40px;
+      max-width: 400px; }
       .bubble-chat .message-wrapper .message.sent {
         float: right;
         background: #0070E2; }
@@ -23,9 +23,11 @@
         margin: 10px;
         font-family: Helvetica, "Open Sans", Arial; }
 
-.app-container .container {
-  position: fixed;
-  bottom: 0;
-  width: 100%; }
-  .app-container .container .row .button-field {
-    margin-top: 20px; }
+.app-container {
+  max-width: 500px; }
+  .app-container .container {
+    position: fixed;
+    bottom: 0;
+    width: 100%; }
+    .app-container .container .row .button-field {
+      margin-top: 20px; }
