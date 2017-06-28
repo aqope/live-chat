@@ -6,55 +6,41 @@
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
     </style>
 
     <link rel="stylesheet" href="static/bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="static/css/app.css">
   </head>
   <body>
-    <div id="chat-app">
-      <ul id="messages" v-for="msg in messages">
-        <li> {{ msg }} </li>
+    <div id="chat-app" class="app-container">
+      <ul id="messages" class="bubble-chat" v-for="msg in messages">
+        <li>
+            <div class="message-wrapper">
+              <div class="message received">
+                <p>{{ msg }}</p>
+              </div>
+            </div>
+         </li>
       </ul>
-
-      <form action="" v-on:submit="sendMessage">
-        <input id="m" v-model="message" autocomplete="off">
-        <button>Send</button>
-      </form>
+      <div class="container" style="">
+        <form action="" v-on:submit="sendMessage">
+          <div class="row">
+            <div class="input-field col s10">
+              <input id="m" v-model="message" type="text" autocomplete="off">
+              <label for="m">Message</label>
+            </div>
+            <div class="button-field col s2">
+              <button class="btn waves-effect waves-light" type="submit">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src='static/bower_components/materialize/dist/js/materialize.min.js'></script>
     <script src="static/bower_components/vue/dist/vue.min.js"></script>
     <script src="static/bower_components/socket.io-client/dist/socket.io.js"></script>
-    <script type="text/javascript">
-      var socket = io();
-
-      new Vue({
-        el: "#chat-app",
-        data: {
-          messages: [],
-          message: ""
-        },
-        mounted: function () {
-          socket.on('chat message', function(data) {
-            this.messages.push(data);
-          }.bind(this));
-        },
-        methods: {
-          sendMessage: function(e) {
-            e.preventDefault();
-            socket.emit("chat message", this.message);
-          },
-          receivedMessage: function(data) {
-            this.messages.push(data);
-          }
-        }
-      });
-    </script>
+    <script src="static/js/app.js"></script>
   </body>
 </html>

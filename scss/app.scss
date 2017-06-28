@@ -1,0 +1,17 @@
+@import 'var';
+@import 'component/bubble';
+
+.app-container {
+  .container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    .row {
+
+      .button-field {
+        margin-top: 20px;
+      }
+    }
+  }
+}

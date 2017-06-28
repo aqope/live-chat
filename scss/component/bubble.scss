@@ -1,0 +1,34 @@
+.bubble-chat {
+  list-style-type: none;
+
+  .message-wrapper {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    margin: 10px;
+
+    .message {
+      display: inline-block;
+      border-radius: 20px;
+      width: auto;
+      max-width: 400px;
+      min-width: 100px;
+
+      &.sent {
+        float: right;
+        background: #0070E2;
+      }
+
+      &.received {
+        float: left;
+        background: #d7d7d7;
+      }
+
+      p {
+        font-size: $s-msg-main;
+        margin: 10px;
+        font-family: $f-msg-main;
+      }
+    }
+  }
+}
