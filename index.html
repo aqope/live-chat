@@ -13,8 +13,11 @@
   </head>
   <body>
     <div id="chat-app" class="app-container">
-      <ul id="messages" class="bubble-chat" v-for="msg in messages">
-        <li>
+      <ul id="messages" class="bubble-chat">
+        <li v-for="msg in messages">
+            <div class="author">
+              <p>{{ msg.username == username ? 'Me' : msg.username }}</p>
+            </div>
             <div class="message-wrapper">
               <div class="message sent" v-if="msg.username == username">
                 <p>{{ msg.message }}</p>
