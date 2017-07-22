@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>livechat</title>
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font: 13px Helvetica, Arial;
+        }
     </style>
 
     <link rel="stylesheet" href="static/bower_components/materialize/dist/css/materialize.min.css">
     <link rel="stylesheet" href="static/css/app.css">
-  </head>
-  <body>
-    <div id="chat-app" class="app-container">
-      <ul id="messages" class="bubble-chat">
+</head>
+<body>
+<div id="chat-app" class="app-container">
+    <ul id="messages" class="bubble-chat">
         <li v-for="msg in messages">
-            <div class="author">
-              <p>{{ msg.username == username ? 'Me' : msg.username }}</p>
-            </div>
             <div class="message-wrapper">
-              <div class="message sent" v-if="msg.username == username">
-                <p>{{ msg.message }}</p>
-              </div>
-              <div class="message received" v-else>
-                <p>{{ msg.message }}</p>
-              </div>
+                <div class="message sent" v-if="msg.username == username">
+                    <p>{{ msg.message }}</p>
+                </div>
+                <div class="message received" v-else>
+                    <p>{{ msg.message }}</p>
+                </div>
             </div>
-         </li>
-      </ul>
-      <div class="container" style="">
+        </li>
+    </ul>
+    <div class="container" style="">
         <form action="" v-on:submit="sendMessage">
-          <div class="row">
-            <div class="input-field col s10">
-              <input id="m" v-model="message" type="text" autocomplete="off">
-              <label for="m">Message</label>
+            <div class="row">
+                <div class="input-field col s10">
+                    <input id="m" v-model="message" type="text" autocomplete="off">
+                    <label for="m">Message</label>
+                </div>
+                <div class="button-field col s2">
+                    <button class="btn waves-effect waves-light" type="submit">Send</button>
+                </div>
             </div>
-            <div class="button-field col s2">
-              <button class="btn waves-effect waves-light" type="submit">Send</button>
-            </div>
-          </div>
         </form>
-      </div>
     </div>
+</div>
 
-    <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src='static/bower_components/materialize/dist/js/materialize.min.js'></script>
-    <script src="static/bower_components/vue/dist/vue.min.js"></script>
-    <script src="static/bower_components/socket.io-client/dist/socket.io.js"></script>
-    <script src="static/js/app.js"></script>
-  </body>
+<script src="static/bower_components/jquery/dist/jquery.min.js"></script>
+<script src='static/bower_components/materialize/dist/js/materialize.min.js'></script>
+<script src="static/bower_components/vue/dist/vue.min.js"></script>
+<script src="static/bower_components/socket.io-client/dist/socket.io.js"></script>
+<script src="static/js/app.js"></script>
+</body>
 </html>
