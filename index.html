@@ -20,6 +20,12 @@
 </head>
 <body>
 <div id="chat-app" class="app-container">
+    <ul id="users-list" style="display: none">
+    <li v-for="user in users">
+    <div class="color-icon"></div>
+    <div class="nickname"><p>{{ user }}</p></div>
+    </li>
+    </ul>
     <ul id="messages" class="bubble-chat">
         <li v-for="msg in messages">
             <div class="message-wrapper">

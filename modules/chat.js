@@ -15,6 +15,10 @@ var chat = function () {
         return false;
     };
 
+    this.getUsers = function() {
+        return this.users;
+    }
+
 }
 
 module.exports = chat;

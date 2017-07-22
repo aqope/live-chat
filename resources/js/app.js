@@ -5,7 +5,8 @@ new Vue({
     data: {
         messages: [],
         message: "",
-        username: ""
+        username: "",
+        users: []
     }, mounted: function () {
         socket.on('server:message', function (data) {
             this.messages.push(data);
@@ -48,7 +49,19 @@ new Vue({
                 alert(response.message);
                 socket.disconnect();
                 jQuery(this.el).addClass('disconnected');
+
+                return;
             }
+
+            socket.on("server:users:list", function (data) {
+                this.usersUpdateHandle(data);
+            }.bind(this));
+
+            // Requesting a Users List
+            socket.emit("client:users:list");
+        },
+        usersUpdateHandle: function (response) {
+            this.users = response;
         }
     }
 });
