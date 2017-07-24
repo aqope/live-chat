@@ -31,7 +31,6 @@ io.on('connection', function(socket) {
         error: false,
         message: ''
       };
-
       var usersData = chatapp.getUsers();
       io.emit("server:users:list", usersData);
     } else {

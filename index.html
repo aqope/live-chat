@@ -19,37 +19,44 @@
     <link rel="stylesheet" href="static/css/app.css">
 </head>
 <body>
-<div id="chat-app" class="app-container">
-    <ul id="users-list" style="display: none">
-    <li v-for="user in users">
-    <div class="color-icon"></div>
-    <div class="nickname"><p>{{ user }}</p></div>
-    </li>
-    </ul>
-    <ul id="messages" class="bubble-chat">
-        <li v-for="msg in messages">
-            <div class="message-wrapper">
-                <div class="message sent" v-if="msg.username == username">
-                    <p>{{ msg.message }}</p>
+<div id="chat-app" class="app-container row">
+    <div class="col s3">
+        <ul id="users-list" style="display: none">
+            <li v-for="user in users">
+                <div class="color-icon"></div>
+                <div class="nickname"><p>{{ user }}</p></div>
+            </li>
+        </ul>
+    </div>
+    <div class="col s6">
+        <ul id="messages" class="bubble-chat">
+            <li v-for="msg in messages">
+                <div class="message-wrapper">
+                    <div class="message sent" v-if="msg.username == username">
+                        <p>{{ msg.message }}</p>
+                    </div>
+                    <div class="message received" v-else>
+                        <p>{{ msg.message }}</p>
+                    </div>
                 </div>
-                <div class="message received" v-else>
-                    <p>{{ msg.message }}</p>
+            </li>
+        </ul>
+        <div class="container" style="">
+            <form action="" v-on:submit="sendMessage">
+                <div class="row">
+                    <div class="input-field col s10">
+                        <input id="m" v-model="message" type="text" autocomplete="off">
+                        <label for="m">Message</label>
+                    </div>
+                    <div class="button-field col s2">
+                        <button class="btn waves-effect waves-light" type="submit">Send</button>
+                    </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-    <div class="container" style="">
-        <form action="" v-on:submit="sendMessage">
-            <div class="row">
-                <div class="input-field col s10">
-                    <input id="m" v-model="message" type="text" autocomplete="off">
-                    <label for="m">Message</label>
-                </div>
-                <div class="button-field col s2">
-                    <button class="btn waves-effect waves-light" type="submit">Send</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+    </div>
+    <div class="col s3">
+
     </div>
 </div>
 
