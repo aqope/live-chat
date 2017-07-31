@@ -35,7 +35,7 @@
             <li v-for="msg in messages">
                 <div class="message-wrapper">
                     <div class="message" v-bind:class="[msg.username == username ? 'sent' : 'received']" v-bind:style="{ backgroundColor: msg.colorVal }">
-                        <p>{{ msg.message }} {{username}}</p>
+                        <p>{{ msg.message }}</p>
                     </div>
                 </div>
             </li>

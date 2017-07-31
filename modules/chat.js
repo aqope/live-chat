@@ -23,12 +23,19 @@ var chat = function () {
     this.addUser = function (data) {
         if (!this.isUsernameUsed(data.username)) {
             var color = this.getRandomColor();
-            this.users.push({"username": data.username, "color": color});
-
+            this.users.push({"username": data.username, "color": color, "socketId": data.id});
             return true;
         }
 
         return false;
+    };
+
+    this.removeUserBySocketId = function (socketId) {
+        this.users = this.users.filter(function(user) {
+            if (socketId != user.socketId) {
+                return user;
+            }
+        });
     };
 
     this.getUsers = function() {

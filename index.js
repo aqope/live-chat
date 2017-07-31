@@ -6,7 +6,7 @@ var chat = require('./modules/chat');
 var chatapp = new chat();
 
 server.listen(3000, function() {
-  log('listening on 3000 port');
+  log('Listening on 3000 port');
 });
 
 // Serving Static Content
@@ -18,6 +18,9 @@ app.get('/', function (request, response) {
 });
 
 io.on('connection', function(socket) {
+  var socketId = socket.id;
+  log("Connected: " + socketId);
+  
   socket.emit('server:auth');
 
   socket.on('client:message', function(data) {
@@ -26,6 +29,8 @@ io.on('connection', function(socket) {
 
   socket.on('client:auth', function(data) {
     var response = {};
+    data.id = socketId;
+
     if (chatapp.addUser(data)) {
       response = {
         error: false,
@@ -43,14 +48,15 @@ io.on('connection', function(socket) {
   });
 
   socket.on('client:users:list', function() {
-    log("this was triggered");
     var usersData = chatapp.getUsers();
     socket.emit("server:users:list", usersData);
   });
 
   socket.on('disconnect', function(socket) {
-    console.log(socket);
-    log('Used has disconnected');
+    chatapp.removeUserBySocketId(socketId);
+    log("Disconnected: " + socketId);
+    var usersData = chatapp.getUsers();
+    io.emit("server:users:list", usersData);
   })
 });
 
