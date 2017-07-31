@@ -9,7 +9,7 @@ new Vue({
         users: []
     }, mounted: function () {
         socket.on('server:message', function (data) {
-            this.messages.push(data);
+            this.receivedMessage(data);
         }.bind(this));
 
         socket.on('server:auth', function () {
@@ -31,6 +31,7 @@ new Vue({
             });
         },
         receivedMessage: function (data) {
+            data.colorVal = this.getUserColor(data.username);
             this.messages.push(data);
         },
         authClient: function () {
@@ -61,8 +62,17 @@ new Vue({
             socket.emit("client:users:list");
         },
         usersUpdateHandle: function (response) {
-            console.log(response);
             this.users = response;
+        },
+        getUserColor: function (username) {
+            var color = "";
+            this.users.forEach(function(user) {
+                if (user.username == username) {
+                    color = user.color.value;
+                    return;
+                }
+            });
+            return color;
         }
     }
 });

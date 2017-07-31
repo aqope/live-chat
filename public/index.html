@@ -34,11 +34,8 @@
         <ul id="messages" class="bubble-chat">
             <li v-for="msg in messages">
                 <div class="message-wrapper">
-                    <div class="message sent" v-if="msg.username == username">
-                        <p>{{ msg.message }}</p>
-                    </div>
-                    <div class="message received" v-else>
-                        <p>{{ msg.message }}</p>
+                    <div class="message" v-bind:class="[msg.username == username ? 'sent' : 'received']" v-bind:style="{ backgroundColor: msg.colorVal }">
+                        <p>{{ msg.message }} {{username}}</p>
                     </div>
                 </div>
             </li>
