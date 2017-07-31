@@ -76,3 +76,37 @@ new Vue({
         }
     }
 });
+
+
+jQuery(document).on('ready', function() {
+var colors = [
+    {"name": "Green", "value": "#80ff00"},
+    {"name": "Blue", "value": "#87cefa"},
+    {"name": "Gray", "value": "#d7d7d7"},
+    {"name": "Cyan", "value": "#00ffff"},
+    {"name": "Orange", "value": "#ffcc80"},
+    {"name": "Rose", "value": "#ffb3b3"},
+    {"name": "Purple", "value": "#cc99ff"}
+];
+    var grid = jQuery("#color-picker .color-grid");
+    var index = 0;
+    var columns = 5;
+    colors.forEach(function(color) {
+    if (i == 0) {
+        var row = grid.append('<div class="row"></div>');
+        row.append(
+            '<div class="col s1"></div>'
+        );
+    }
+    row.append(
+        '<div class="col s2"><div class="color-icon" data-color-value="' + color.name + ' style="background-color: '+ color.value +'"></div></div>'
+    );
+
+    if (i == columns) {
+        i = 0;
+        row.append(
+            '<div class="col s1"></div>'
+        );
+    }
+    });
+});
