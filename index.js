@@ -10,11 +10,11 @@ server.listen(3000, function() {
 });
 
 // Serving Static Content
-app.use('/static', express.static('resources'));
+app.use('/static', express.static('public/resources'));
 
 // Serving Index Page
 app.get('/', function (request, response) {
-  response.sendFile(__dirname + '/index.html');
+  response.sendFile(__dirname + '/public/index.html');
 });
 
 io.on('connection', function(socket) {

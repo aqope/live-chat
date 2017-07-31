@@ -5,7 +5,7 @@
     width: 100%;
     display: block;
     overflow: hidden;
-    margin: 10px;
+    margin-bottom: 5px;
 
     .message {
       display: inline-block;
@@ -26,7 +26,7 @@
 
       p {
         font-size: $s-msg-main;
-        margin: 10px;
+        margin: 8px;
         font-family: $f-msg-main;
       }
     }

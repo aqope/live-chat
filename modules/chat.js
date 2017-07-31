@@ -1,13 +1,13 @@
 var chat = function () {
     this.users = [];
     this.colors = [
-        {"color": "Green", "value": "#80ff00"},
-        {"color": "Blue", "value": "#87cefa"},
-        {"color": "Gray", "value": "#d7d7d7"},
-        {"color": "Cyan", "value": "#00ffff"},
-        {"color": "Orange", "value": "#ffcc80"},
-        {"color": "Rose", "value": "#ffb3b3"},
-        {"color": "Purple", "value": "#cc99ff"}
+        {"name": "Green", "value": "#80ff00"},
+        {"name": "Blue", "value": "#87cefa"},
+        {"name": "Gray", "value": "#d7d7d7"},
+        {"name": "Cyan", "value": "#00ffff"},
+        {"name": "Orange", "value": "#ffcc80"},
+        {"name": "Rose", "value": "#ffb3b3"},
+        {"name": "Purple", "value": "#cc99ff"}
     ];
 
     this.isUsernameUsed = function (username) {
@@ -23,7 +23,7 @@ var chat = function () {
     this.addUser = function (data) {
         if (!this.isUsernameUsed(data.username)) {
             var color = this.getRandomColor();
-            this.users.push({"username": data.username, "color": color['color']});
+            this.users.push({"username": data.username, "color": color});
 
             return true;
         }

@@ -1,0 +1,25 @@
+#users-list {
+
+    li {
+        text-align: right;
+
+        div {
+            display: inline-block;
+
+            &.nickname {
+                font-size: 14px;
+                vertical-align: top;
+            }
+
+            &.color-icon {
+                width: 18px;
+                height: 18px;
+                border-radius: 16px;
+                position: relative;
+                margin-top: 7px;
+                margin-right: -3px;
+                margin-left: 5px;
+            }
+        }
+    }
+}

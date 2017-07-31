@@ -14,5 +14,5 @@ gulp.task('compile:styles', function(){
 
   return merge(scssStream)
       .pipe(concat('app.css'))
-      .pipe(gulp.dest('resources/css/'));
+      .pipe(gulp.dest('public/resources/css/'));
 });
