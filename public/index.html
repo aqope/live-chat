@@ -58,30 +58,24 @@
 
     </div>
   <!-- Modal Structure -->
-  <div id="loginModal" class="modal">
+</div>
+<div id="loginModal" class="modal">
     <div class="modal-content">
         <h5> Please, input your username! </h5>
         <div class="input-field">
-            <input id="username" type="text">
+            <input id="username" name="username" type="text">
             <label for="username">Username</label> 
         </div>
         <div class="input-field">
             <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
             <label for="filled-in-box">Generate random color</label>
         </div>
-        <div class="input-field">
+        <div class="input-field" style="display: none">
             <a class="waves-effect waves-light btn">Select Color</a>
 
             <div id="color-picker" class="card-panel white">
                 <p>Select a color</p>
                 <div class="color-grid">
-                    <div class="col s1"><div class="color-icon" data-color-value=""></div></div>
-                    <div class="col s2"><div class="color-icon" data-color-value=""></div></div>
-                    <div class="col s2"><div class="color-icon" data-color-value=""></div></div>
-                    <div class="col s2"><div class="color-icon" data-color-value=""></div></div>
-                    <div class="col s2"><div class="color-icon" data-color-value=""></div></div>
-                    <div class="col s2"><div class="color-icon" data-color-value=""></div></div>
-                    <div class="col s1"><div class="color-icon" data-color-value=""></div></div>
                 </div>
             </div>
             <script type="text/javascript">
@@ -93,7 +87,6 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>
-</div>
 
 <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
 <script src='static/bower_components/materialize/dist/js/materialize.min.js'></script>
