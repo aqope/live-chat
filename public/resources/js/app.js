@@ -8,10 +8,11 @@ new Vue({
         username: "",
         users: []
     }, mounted: function () {
+        this.onDocumentReady();
         socket.on('server:message', function (data) {
             this.receivedMessage(data);
         }.bind(this));
-
+        
         socket.on('server:auth', function () {
             this.getUsernameDialog(this.onUsernameDialogComplete);
         }.bind(this));
@@ -77,12 +78,19 @@ new Vue({
            jQuery('#loginModal').modal('open', {
                inDuration: 100,
                outDuration: 100,
+               dismissible: false,
                complete: callback.bind(this)
             });
         },
         onUsernameDialogComplete: function () {
             this.username = jQuery('#loginModal input[name="username"]').val();
             this.authClient();
+        },
+        onDocumentReady: function() {
+            jQuery("#loginModal form").on('submit', function(event) {
+                event.preventDefault();
+                jQuery('#loginModal').modal('close');
+            });
         }
     }
 });

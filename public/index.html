@@ -60,10 +60,11 @@
   <!-- Modal Structure -->
 </div>
 <div id="loginModal" class="modal">
-    <div class="modal-content">
+    <form action="">
+        <div class="modal-content">
         <h5> Please, input your username! </h5>
         <div class="input-field">
-            <input id="username" name="username" type="text">
+            <input id="username" name="username" class="validate" required="" aria-required="" type="text">
             <label for="username">Username</label> 
         </div>
         <div class="input-field">
@@ -84,8 +85,11 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <button class="btn waves-effect waves-green btn-flat" type="submit">
+            Connect
+        </button>
     </div>
+    </form>
   </div>
 
 <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
