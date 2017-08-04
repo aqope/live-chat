@@ -11,11 +11,11 @@ var chat = function () {
     ];
 
     this.isUsernameUsed = function (username) {
-        this.users.forEach(function(item) {
-            if (username == item.username) {
+        for (index in this.users) {
+            if (this.users[index].username == username) {
                 return true;
             }
-        });
+        }
 
         return false;
     };
