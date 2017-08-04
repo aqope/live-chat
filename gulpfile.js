@@ -6,7 +6,7 @@ var merge = require('merge-stream');
 /*
   Compile SCSS styles into one CSS file
 */
-gulp.task('compile:styles', function(){
+gulp.task('compile:css', function(){
   var scssStream = gulp.src('./scss/app.scss')
       .pipe(scss().on('error', function() {
         console.log(scss.LogError);

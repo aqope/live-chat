@@ -4,10 +4,21 @@
 
 .app-container {
   max-width: 1000px;
+
+  .bubble-chat {
+    position: fixed;
+    width: inherit;
+    overflow-y: scroll;
+    overflow-x: none;
+    height: 85%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
   .container {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 50%;
 
     .row {
 

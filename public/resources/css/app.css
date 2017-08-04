@@ -41,9 +41,17 @@
 
 .app-container {
   max-width: 1000px; }
+  .app-container .bubble-chat {
+    position: fixed;
+    width: inherit;
+    overflow-y: scroll;
+    overflow-x: none;
+    height: 85%; }
+    .app-container .bubble-chat::-webkit-scrollbar {
+      display: none; }
   .app-container .container {
     position: fixed;
     bottom: 0;
-    width: 100%; }
+    width: 50%; }
     .app-container .container .row .button-field {
       margin-top: 20px; }

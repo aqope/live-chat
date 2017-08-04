@@ -34,6 +34,13 @@ new Vue({
         receivedMessage: function (data) {
             data.colorVal = this.getUserColor(data.username);
             this.messages.push(data);
+            Vue.nextTick(function() {
+              jQuery('#messages').animate({
+                    scrollTop: jQuery('#messages').prop('scrollHeight')
+                }, 1);
+            });
+            
+            console.log( jQuery('#messages').prop('scrollHeight') );
         },
         authClient: function () {
             var sendData = {
@@ -92,7 +99,7 @@ new Vue({
                 jQuery('#loginModal').modal('close');
             });
         }
-    }
+    },
 });
 
 
