@@ -45,6 +45,9 @@
     max-width: 500px;
     width: inherit;
     position: fixed; }
+    @media screen and (min-width: 993px) {
+      .app-container .fixed-container {
+        max-width: 666px; } }
     .app-container .fixed-container .bubble-chat {
       position: fixed;
       width: inherit;
