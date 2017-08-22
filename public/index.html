@@ -31,27 +31,29 @@
         </ul>
     </div>
     <div class="col s6">
-        <ul id="messages" class="bubble-chat">
-            <li v-for="msg in messages">
-                <div class="message-wrapper">
-                    <div class="message" v-bind:class="[msg.username == username ? 'sent' : 'received']" v-bind:style="{ backgroundColor: msg.colorVal }">
-                        <p>{{ msg.message }}</p>
+        <div class="fixed-container">
+            <ul id="messages" class="bubble-chat">
+                <li v-for="msg in messages">
+                    <div class="message-wrapper">
+                        <div class="message" v-bind:class="[msg.username == username ? 'sent' : 'received']" v-bind:style="{ backgroundColor: msg.colorVal }">
+                            <p>{{ msg.message }}</p>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-        <div class="container" style="">
-            <form action="" v-on:submit="sendMessage">
-                <div class="row">
-                    <div class="input-field col s10">
-                        <input id="m" v-model="message" type="text" autocomplete="off">
-                        <label for="m">Message</label>
+                </li>
+            </ul>
+            <div class="input-container">
+                <form action="" v-on:submit="sendMessage">
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input id="m" v-model="message" type="text" autocomplete="off">
+                            <label for="m">Message</label>
+                        </div>
+                        <div class="button-field col s2">
+                            <button class="btn-floating waves-effect waves-light" type="submit">Send <i class="material-icons right">send</i></button>
+                        </div>
                     </div>
-                    <div class="button-field col s2">
-                        <button class="btn waves-effect waves-light" type="submit">Send</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
     <div class="col s3">

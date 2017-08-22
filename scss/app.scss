@@ -4,26 +4,35 @@
 
 .app-container {
   max-width: 1000px;
-
-  .bubble-chat {
-    position: fixed;
+  .fixed-container {
+    max-width: 500px;
     width: inherit;
-    overflow-y: scroll;
-    overflow-x: none;
-    height: 85%;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  .container {
     position: fixed;
-    bottom: 0;
-    width: 50%;
 
-    .row {
+    .bubble-chat {
+      position: fixed;
+      width: inherit;
+      max-width: inherit;
+      overflow-y: scroll;
+      overflow-x: none;
+      height: 85%;
+      
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
-      .button-field {
-        margin-top: 20px;
+    .input-container {
+      position: fixed;
+      bottom: 0;
+      width: inherit;
+      max-width: inherit;
+  
+      .row {
+  
+        .button-field {
+          margin-top: 20px;
+        }
       }
     }
   }

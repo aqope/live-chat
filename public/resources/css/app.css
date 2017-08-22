@@ -41,17 +41,23 @@
 
 .app-container {
   max-width: 1000px; }
-  .app-container .bubble-chat {
-    position: fixed;
+  .app-container .fixed-container {
+    max-width: 500px;
     width: inherit;
-    overflow-y: scroll;
-    overflow-x: none;
-    height: 85%; }
-    .app-container .bubble-chat::-webkit-scrollbar {
-      display: none; }
-  .app-container .container {
-    position: fixed;
-    bottom: 0;
-    width: 50%; }
-    .app-container .container .row .button-field {
-      margin-top: 20px; }
+    position: fixed; }
+    .app-container .fixed-container .bubble-chat {
+      position: fixed;
+      width: inherit;
+      max-width: inherit;
+      overflow-y: scroll;
+      overflow-x: none;
+      height: 85%; }
+      .app-container .fixed-container .bubble-chat::-webkit-scrollbar {
+        display: none; }
+    .app-container .fixed-container .input-container {
+      position: fixed;
+      bottom: 0;
+      width: inherit;
+      max-width: inherit; }
+      .app-container .fixed-container .input-container .row .button-field {
+        margin-top: 20px; }
