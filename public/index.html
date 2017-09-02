@@ -34,9 +34,17 @@
         <div class="fixed-container">
             <ul id="messages" class="bubble-chat">
                 <li v-for="msg in messages">
-                    <div class="message-wrapper">
-                        <div class="message" v-bind:class="[msg.username == username ? 'sent' : 'received']" v-bind:style="{ backgroundColor: msg.colorVal }">
-                            <p>{{ msg.message }}</p>
+                    <div class="messsage-row">
+                        <div class="message-wrapper" v-bind:class="[msg.username == username ? 'sent' : 'received']">
+                            <div class="author">
+                                <p> Somebody </p>
+                            </div>
+                            <div class="message" v-bind:style="{ backgroundColor: msg.colorVal }">
+                                <p>{{ msg.message }}</p>
+                            </div>
+                            <div class="date">
+                                <p> 21:24 </p>
+                            </div>
                         </div>
                     </div>
                 </li>

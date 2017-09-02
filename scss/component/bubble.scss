@@ -1,33 +1,49 @@
 .bubble-chat {
   list-style-type: none;
-
-  .message-wrapper {
+  
+  .messsage-row {
     width: 100%;
-    display: block;
-    overflow: hidden;
-    margin-bottom: 5px;
+    overflow:hidden;
 
-    .message {
-      display: inline-block;
-      border-radius: 20px;
+    .message-wrapper {
       width: auto;
-      min-width: 40px;
-      max-width: 400px;
-
+      display: block;
+      margin-bottom: 5px;
+      
       &.sent {
         float: right;
-        background: #87CEFA;
       }
 
       &.received {
         float: left;
-        background: #d7d7d7;
       }
+      .author, .date  {
+        p {
+          text-align: right;
+        }
+      }
+      .message {
+        display: inline-block;
+        border-radius: 20px;
+        width: auto;
+        min-width: 40px;
+        max-width: 400px;
 
-      p {
-        font-size: $s-msg-main;
-        margin: 8px;
-        font-family: $f-msg-main;
+        // &.sent {
+        //   float: right;
+        //   background: #87CEFA;
+        // }
+
+        // &.received {
+        //   float: left;
+        //   background: #d7d7d7;
+        // }
+
+        p {
+          font-size: $s-msg-main;
+          margin: 8px;
+          font-family: $f-msg-main;
+        }
       }
     }
   }

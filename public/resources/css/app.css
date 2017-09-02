@@ -1,27 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .bubble-chat {
   list-style-type: none; }
-  .bubble-chat .message-wrapper {
+  .bubble-chat .messsage-row {
     width: 100%;
-    display: block;
-    overflow: hidden;
-    margin-bottom: 5px; }
-    .bubble-chat .message-wrapper .message {
-      display: inline-block;
-      border-radius: 20px;
+    overflow: hidden; }
+    .bubble-chat .messsage-row .message-wrapper {
       width: auto;
-      min-width: 40px;
-      max-width: 400px; }
-      .bubble-chat .message-wrapper .message.sent {
-        float: right;
-        background: #87CEFA; }
-      .bubble-chat .message-wrapper .message.received {
-        float: left;
-        background: #d7d7d7; }
-      .bubble-chat .message-wrapper .message p {
-        font-size: 14px;
-        margin: 8px;
-        font-family: Helvetica, "Open Sans", Arial; }
+      display: block;
+      margin-bottom: 5px; }
+      .bubble-chat .messsage-row .message-wrapper.sent {
+        float: right; }
+      .bubble-chat .messsage-row .message-wrapper.received {
+        float: left; }
+      .bubble-chat .messsage-row .message-wrapper .author p, .bubble-chat .messsage-row .message-wrapper .date p {
+        text-align: right; }
+      .bubble-chat .messsage-row .message-wrapper .message {
+        display: inline-block;
+        border-radius: 20px;
+        width: auto;
+        min-width: 40px;
+        max-width: 400px; }
+        .bubble-chat .messsage-row .message-wrapper .message p {
+          font-size: 14px;
+          margin: 8px;
+          font-family: Helvetica, "Open Sans", Arial; }
 
 #users-list li {
   text-align: right; }
