@@ -1,3 +1,4 @@
 node_modules/
-resources/bower_components/
+public/resources/bower_components/
 .idea/
+resources/

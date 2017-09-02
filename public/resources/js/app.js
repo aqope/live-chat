@@ -24,6 +24,10 @@ new Vue({
                 username: this.username,
                 message: this.message
             }
+            if (!this.message || this.message.length === 0) {
+                return;
+            }
+
             socket.emit("client:message", sendData);
             this.message = "";
 
