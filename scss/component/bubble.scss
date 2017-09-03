@@ -12,14 +12,28 @@
       
       &.sent {
         float: right;
+        
+        .author, .date  {
+          p {
+            margin-right: 5px;
+            text-align: right;
+          }
+        }
       }
 
       &.received {
         float: left;
+
+        .author, .date  {
+          p {
+            margin-left: 5px;
+            text-align: left;
+          }
+        }
       }
       .author, .date  {
         p {
-          text-align: right;
+          font-size: 9px;
         }
       }
       .message {
@@ -28,16 +42,6 @@
         width: auto;
         min-width: 40px;
         max-width: 400px;
-
-        // &.sent {
-        //   float: right;
-        //   background: #87CEFA;
-        // }
-
-        // &.received {
-        //   float: left;
-        //   background: #d7d7d7;
-        // }
 
         p {
           font-size: $s-msg-main;

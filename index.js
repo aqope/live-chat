@@ -3,6 +3,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var chat = require('./modules/chat');
+var moment = require('moment');
 var chatapp = new chat();
 
 server.listen(3000, function() {
@@ -24,6 +25,11 @@ io.on('connection', function(socket) {
   socket.emit('server:auth');
 
   socket.on('client:message', function(data) {
+
+    if (data.date === undefined) {
+      data.date = moment().format("HH:MM:ss");
+    }
+
     io.emit('server:message', data);
   });
 

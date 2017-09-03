@@ -10,10 +10,16 @@
       margin-bottom: 5px; }
       .bubble-chat .messsage-row .message-wrapper.sent {
         float: right; }
+        .bubble-chat .messsage-row .message-wrapper.sent .author p, .bubble-chat .messsage-row .message-wrapper.sent .date p {
+          margin-right: 5px;
+          text-align: right; }
       .bubble-chat .messsage-row .message-wrapper.received {
         float: left; }
+        .bubble-chat .messsage-row .message-wrapper.received .author p, .bubble-chat .messsage-row .message-wrapper.received .date p {
+          margin-left: 5px;
+          text-align: left; }
       .bubble-chat .messsage-row .message-wrapper .author p, .bubble-chat .messsage-row .message-wrapper .date p {
-        text-align: right; }
+        font-size: 9px; }
       .bubble-chat .messsage-row .message-wrapper .message {
         display: inline-block;
         border-radius: 20px;
@@ -32,6 +38,8 @@
     #users-list li div.nickname {
       font-size: 14px;
       vertical-align: top; }
+      #users-list li div.nickname.current {
+        font-weight: bold; }
     #users-list li div.color-icon {
       width: 18px;
       height: 18px;

@@ -9,6 +9,9 @@
             &.nickname {
                 font-size: 14px;
                 vertical-align: top;
+                &.current {
+                    font-weight: bold;
+                }
             }
 
             &.color-icon {

@@ -24,7 +24,7 @@
         <ul id="users-list" style="display: block">
             <li v-for="user in users">
                 <div class="chip">
-                    <div class="nickname"><p>{{ user.username }}</p></div>
+                    <div class="nickname" v-bind:class="[user.username == username ? 'current' : '']"><p>{{ user.username }}</p></div>
                     <div class="color-icon" v-bind:style="{ backgroundColor: user.color.value }"></div>
                 </div>
             </li>
@@ -37,13 +37,13 @@
                     <div class="messsage-row">
                         <div class="message-wrapper" v-bind:class="[msg.username == username ? 'sent' : 'received']">
                             <div class="author">
-                                <p> Somebody </p>
+                                <p> {{ msg.username }} </p>
                             </div>
                             <div class="message" v-bind:style="{ backgroundColor: msg.colorVal }">
                                 <p>{{ msg.message }}</p>
                             </div>
                             <div class="date">
-                                <p> 21:24 </p>
+                                <p> {{ msg.date }} </p>
                             </div>
                         </div>
                     </div>
