@@ -43,7 +43,7 @@ var chat = function () {
     };
 
     this.getRandomColor = function() {
-        var random = Math.floor((Math.random() * this.colors.length) + 1);
+        var random = Math.floor((Math.random() * this.colors.length));
         return this.colors[random];
     };
 
