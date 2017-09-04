@@ -4,37 +4,55 @@
 
 .app-container {
   max-width: 1000px;
-  .fixed-container {
-    max-width: 500px;
-    width: inherit;
-    position: fixed;
-    @media screen and (min-width: 993px) {
-      max-width: 666px;
+
+  .left-col {
+    @media screen and (max-width: $break-small) {
+      display: none;
     }
-
-    .bubble-chat {
-      position: fixed;
+  }
+  .right-col {
+    @media screen and (max-width: $break-small) {
+      display: none;
+    }
+  }
+  .main-col {
+    @media screen and (max-width: $break-small) {
+      width: 100% !important;
+      padding: 0;
+    }
+    .fixed-container {
+      max-width: 500px;
       width: inherit;
-      max-width: inherit;
-      overflow-y: scroll;
-      overflow-x: none;
-      height: 85%;
-
-      &::-webkit-scrollbar {
-        display: none;
+      position: fixed;
+      @media screen and (min-width: 993px) {
+        max-width: 666px;
       }
-    }
 
-    .input-container {
-      position: fixed;
-      bottom: 0;
-      width: inherit;
-      max-width: inherit;
-      
-      .row {
-  
-        .button-field {
-          margin-top: 20px;
+
+      .bubble-chat {
+        position: fixed;
+        width: inherit;
+        max-width: inherit;
+        overflow-y: scroll;
+        overflow-x: none;
+        height: 85%;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .input-container {
+        position: fixed;
+        bottom: 0;
+        width: inherit;
+        max-width: inherit;
+        
+        .row {
+    
+          .button-field {
+            margin-top: 20px;
+          }
         }
       }
     }

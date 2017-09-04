@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />
     <title>livechat</title>
     <style>
         * {
@@ -20,7 +21,7 @@
 </head>
 <body>
 <div id="chat-app" class="app-container row" v-cloak>
-    <div class="col s3 l2">
+    <div class="col s3 l2 left-col">
         <ul id="users-list" style="display: block">
             <li v-for="user in users">
                 <div class="chip">
@@ -30,7 +31,7 @@
             </li>
         </ul>
     </div>
-    <div class="col s6 l8">
+    <div class="col s6 l8 main-col">
         <div class="fixed-container">
             <ul id="messages" class="bubble-chat">
                 <li v-for="msg in messages">
@@ -65,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="col s3 l2">
+    <div class="col s3 l2 right-col">
 
     </div>
   <!-- Modal Structure -->
