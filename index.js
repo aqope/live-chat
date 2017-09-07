@@ -5,8 +5,10 @@ var io = require('socket.io')(server);
 var chat = require('./modules/chat');
 var moment = require('moment');
 var chatapp = new chat();
+var port = process.env.PORT || 80;
 
-server.listen(80, function() {
+
+server.listen(port, function() {
   log('Listening on 80 port');
 });
 
