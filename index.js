@@ -6,8 +6,8 @@ var chat = require('./modules/chat');
 var moment = require('moment');
 var chatapp = new chat();
 
-server.listen(3000, function() {
-  log('Listening on 3000 port');
+server.listen(80, function() {
+  log('Listening on 80 port');
 });
 
 // Serving Static Content
