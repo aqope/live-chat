@@ -1,23 +1,29 @@
 {
-  "name": "livechat",
-  "version": "0.0.2",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "author": "",
-  "license": "BSD-2-Clause",
-  "dependencies": {
-    "bower": "^1.8.0",
-    "express": "~4.15.3",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.1.0",
-    "http": "0.0.0",
-    "merge-stream": "^1.0.1",
-    "moment": "^2.18.1",
-    "socket.io": "^2.0.3"
-  }
+    "name": "ChatApp",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "author": "",
+    "license": "BSD-2-Clause",
+    "dependencies": {
+        "bower": "^1.8.0",
+        "express": "~4.15.3",
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-sass": "^3.1.0",
+        "http": "0.0.0",
+        "merge-stream": "^1.0.1",
+        "module-alias": "^2.2.2",
+        "moment": "^2.18.1",
+        "socket.io": "^2.0.3"
+    },
+    "_moduleAliases": {
+        "@modules": "./modules",
+        "@constants": "./constants",
+        "@root": "./"
+    }
 }
