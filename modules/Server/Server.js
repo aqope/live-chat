@@ -1,6 +1,6 @@
 const express = require('express');
 const Connection = require('@modules/Server/Connection');
-const ChatApp = require('@modules/ChatApp/ChatApp');
+const ChatApp = require('@modules/ChatApp/ChatAppHandler');
 const path = require('path');
 
 class Server {
